@@ -38,6 +38,7 @@ var Person = {
   height: 189,
 };
 
+//For loop
 for (var i = 0; i < 10; i++) {
   console.log("I love the Jump");
 }
