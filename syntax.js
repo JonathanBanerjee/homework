@@ -38,6 +38,6 @@ var Person = {
   height: 189,
 };
 
-for (i = 0; i < 10; i++) {
+for (var i = 0; i < 10; i++) {
   console.log("I love the Jump");
 }
