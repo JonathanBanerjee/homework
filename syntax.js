@@ -37,6 +37,7 @@ var Person = {
   age: 28,
   height: 189,
 };
+console.log(Person);
 
 //For loop
 for (var i = 0; i < 10; i++) {
