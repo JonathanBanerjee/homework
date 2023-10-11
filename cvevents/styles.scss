@@ -1,0 +1,222 @@
+// Line up the selectors (e.g. the colours).
+
+// @font-face {
+
+// }
+
+// html {
+
+// }
+
+// body {
+//   background-color: #e0a458;
+// }
+.h3 {
+  font-size: 20px;
+}
+
+.flex-container {
+  //   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #0f0e17;
+  color: #2d3047;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 100px;
+}
+.header {
+  align-items: flex-end;
+  flex-wrap: wrap-reverse;
+}
+
+.profile {
+  border-radius: 50%;
+}
+
+img {
+  border-radius: inherit;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  color: #e0a458;
+}
+
+.links img {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  animation: logos 5s;
+}
+
+@media (min-width: 600px) {
+  .flex-container {
+    flex-direction: row;
+  }
+  .links img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header a {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 800px) {
+  .flex-container {
+    font-size: 1.8rem;
+  }
+
+  .links img {
+    width: 100px;
+    height: 100px;
+  }
+  .header a {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1200px) {
+  .flex-container {
+    font-size: 3rem;
+  }
+  .links img {
+    width: 200px;
+    height: 200px;
+  }
+  .header a {
+    font-size: 15px;
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   .flex-container {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     background-color: #2d3047;
+//     color: #e0a458;
+//     margin: 20px;
+//     padding: 20px;
+//     text-align: center;
+//   }
+//   body {
+//     background-color: #419d78;
+//   }
+// }
+
+@media screen and (min-width: 1440px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    margin: 24px;
+  }
+
+  .header a {
+    font-size: 20px;
+  }
+}
+
+@keyframes logos {
+  from {
+    left: 1000px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+$teambuildercolor: hsl(0, 78%, 62%);
+$calculatorcolor: hsl(212, 86%, 64%);
+$supervisorcolor: hsl(180, 62%, 55%);
+$karmacolor: hsl(34, 97%, 64%);
+
+%sharedfont {
+  //   color: #4d4f62;
+  //   font-family: Poppins, "Courier New", Courier, monospace;
+  font-family: assistant;
+  src: url(./assistant.woff2);
+  font-size: 62.5%;
+  font-family: assistant;
+  //   font-family: assistant;
+  //   src: url(./assistant.woff2);
+}
+
+@mixin borders($color1, $color2) {
+  border: 4px solid $color1;
+  border: 4px solid $color2;
+  border-style: inset;
+}
+
+@mixin cards {
+  border-radius: 6px;
+  background-color: #ffffff;
+  max-width: 300px;
+  padding: 24px;
+  padding-top: 6px;
+  margin: 20px auto;
+}
+
+@mixin header {
+  width: 90%;
+  margin: auto;
+}
+
+@mixin icon-container {
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header h1,
+header h2,
+header p {
+  @extend %sharedfont;
+  text-align: center;
+}
+
+h3 {
+  @extend %sharedfont;
+}
+
+.card {
+  @include cards();
+}
+
+.skills {
+  @include borders($supervisorcolor, $supervisorcolor);
+}
+
+.education {
+  @include borders($karmacolor, $karmacolor);
+}
+
+.certifications {
+  @include borders($calculatorcolor, $calculatorcolor);
+}
+
+.experience {
+  @include borders($teambuildercolor, $teambuildercolor);
+}
+
+.info {
+  @include borders($teambuildercolor, $teambuildercolor);
+}
+
+header {
+  @include header();
+}
+
+.icon-container {
+  @include icon-container();
+}
